@@ -1,0 +1,40 @@
+import csv 
+import numpy 
+
+csv_file_object = csv.reader(open('./Data/train.csv', 'rb')) 
+
+header = csv_file_object.next()
+
+data = []
+for row in csv_file_object:
+	data.append(row)  
+
+data = numpy.array(data) 
+
+#print(data)
+#number of people who survived
+number_passengers 	= numpy.size(data[0::,0].astype(numpy.float))	
+number_survived		= numpy.sum(data[0::,1].astype(numpy.int))
+women_only_stats 	= data[0::,4] == "female"
+men_only_stats 		= data[0::,4] == "male"
+
+# an array representing all men on board where 
+# 1 is survive
+# 0 is not survive
+men_onboard 		= data[men_only_stats, 1].astype(int) 
+num_men_onboard 	= numpy.sum(men_onboard)
+num_men_survived 	= numpy.size(men_onboard)   
+
+# an array representing all women on board where 
+# 1 is survive
+# 0 is not survive
+women_onboard 		= data[women_only_stats, 1].astype(int) 
+num_women_onboard	= numpy.size(women_onboard)
+num_women_survived 	= numpy.sum(women_onboard)
+
+#proportion_women_survived = women_survived / 
+print(num_women_onboard)
+print(num_women_survived)
+print(num_men_onboard)
+print(num_men_survived)		
+#print(number_passengers)

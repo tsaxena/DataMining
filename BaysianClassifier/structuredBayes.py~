@@ -1,0 +1,23 @@
+import nltk
+from sklearn import cross_validation
+
+class Classifier:
+  
+    def __init__(self, bucketPrefix, testBucketNumber, dataFormat):	
+	total = 0
+        classes = {}
+
+	# count the categorial data
+	counts = {}
+        # count the numerical data       
+	# we will use these to compute the mean and sample standard deviation for
+        # each attribute - class pair.
+        totals = {}
+        numericValues = {} 
+
+	#reading the data in from the file
+	self.format = dataFormat.strip().split('\t')
+
+
+
+tenfold("pimaSmall/pimaSmall",  "num	num	num	num	num	num	num	num	class")
