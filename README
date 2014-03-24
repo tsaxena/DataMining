@@ -1,7 +1,11 @@
-this repo holds all the toy projects done for data mining
+This repository contains all the side projects done while following 
+Andrew Ng's course on coursera. 
 
-collaborative filtering
+Current list of projects:
+1. Titanic Survival Prediction using Naive Bayesian Classifier.
 
-initial kaggle attempts
+2. Digit Recognizer Classifier using Neural Network
 
-dan's data science workshopd
+3. Dan Weisenthal's Data Science Workshop examples.
+
+4. Item Based collaborative filtering 
